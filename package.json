@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A library for calculating VAT.",
-  "main": "src/main.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/main.js",
-    "dev": "nodemon src/main.js",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
     "lint": "npx eslint ./src || exit 0",
     "lint:fix": "npx eslint ./src --fix || exit 0"
   },
@@ -22,7 +22,6 @@
     "nodemon": "^3.1.7"
   },
   "dependencies": {
-    "ejs": "^3.1.10",
     "express": "^4.21.1"
   }
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-  <script src="main.js" type="module"></script>
+    <script type="module" src="index.js"></script>
   <title>Produkthantering</title>
 </head>
 <body>
@@ -27,10 +27,17 @@
                 </div>
                 <div class="form-group">
                     <label for="productVat">Moms (%):</label>
-                    <input type="number" id="productVat" min="0" max="100" required>
+                    <select id="productVat" required>
+                        <option value="25">25%</option>
+                        <option value="12">12%</option>
+                        <option value="6">6%</option>
+                        <option value="0">0%</option>
+                    </select>
                 </div>
                 <button type="submit">Lägg till produkt</button>
             </form>
+            <!-- Message container -->
+            <div id="formMessage" class="message"></div>
         </div>
 
         <div class="product-list-section">
@@ -53,5 +60,46 @@
             </table>
         </div>
     </div>
+    <!-- Modal for editing product -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Redigera produkt</h2>
+      <form id="editProductForm">
+        <div class="form-group">
+          <label for="editProductName">Namn:</label>
+          <input type="text" id="editProductName" required>
+        </div>
+        <div class="form-group">
+          <label for="editProductPrice">Pris:</label>
+          <input type="number" id="editProductPrice" min="0" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="editProductQuantity">Antal:</label>
+          <input type="number" id="editProductQuantity" min="0" required>
+        </div>
+        <div class="form-group">
+          <label for="editProductVat">Moms (%):</label>
+          <select id="editProductVat" required>
+            <option value="25">25%</option>
+            <option value="12">12%</option>
+            <option value="6">6%</option>
+            <option value="0">0%</option>
+          </select>
+        </div>
+        <button type="submit">Spara ändringar</button>
+      </form>
+    </div>
+  </div>
+    <!-- Modal for deleting product -->
+  <div id="deleteModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Bekräfta borttagning</h2>
+      <p>Är du säker på att du vill ta bort denna produkt?</p>
+      <button id="confirmDelete">Ja, ta bort</button>
+      <button id="cancelDelete">Avbryt</button>
+    </div>
+  </div>
 </body>
 </html>
