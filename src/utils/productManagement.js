@@ -32,7 +32,6 @@ export class ProductManagement {
 /**
  * Purpose: to update the product details.
  */
-
 updateProduct(name, updatedInfo) {
   const product = this.findProductByName(name)
   if (!product) return 'Product not found'

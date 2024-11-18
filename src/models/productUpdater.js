@@ -1,6 +1,3 @@
-// Purpose: to update the product details.
-import { Product } from './product.js'
-
 export class ProductUpdater  {
   constructor(Product){
     this.Product = Product
