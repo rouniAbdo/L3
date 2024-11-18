@@ -1,8 +1,7 @@
-import { ProductManagement } from '../utils/productManagement'
 
 export class ProductFormHandler {
-    constructor() {
-        this.productManagement = new ProductManagement()
+    constructor(productManagement) {
+        this.productManagement = productManagement
         this.initializeEventListeners()
     }
     /**
