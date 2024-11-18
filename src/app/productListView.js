@@ -1,7 +1,25 @@
 export class ProductListView {
-    constructor() {
-        this.productManagement = new ProductManagement()
+    constructor(productManagement, productEditor) {
+        this.productManagement = productManagement
+        this.productEditor = productEditor
+        this.tbody = document.querySelector('#productList tbody')
     }
+    /**
+     * Purpose: to update the view.
+     */
+    updateView () {
+        this.tbody.innerHTML = ''
+        this.productManagement.products.forEach(product => {
+            const tr = this.createProductRow(product)
+            this.tbody.appendChild(tr)
+        })
+        this.updateTotalPrice()
+    }
+    /**
+     * Purpose: to create a row for a product.
+     *
+     * @param {Product} product - the product for which the row will be created.
+     */
     createProductRow (product) {
         const tr = document.createElement('tr')
         tr.innerHTML = `
@@ -14,7 +32,25 @@ export class ProductListView {
                 <button class="delete-btn" data-name="${product.getProductName()}">Ta bort</button>
             </td>
         `
+        this.addRowEventListeners(tr, product.getProductName())
         return tr
     }
-
+    /**
+     * Purpose: to add event listeners to the row.
+     *
+     * @param {HTMLElement} row - the row to which the event listeners will be added.
+     */
+    addRowEventListeners(row, productName) {
+        row.querySelector('.edit-btn').addEventListener('click', () => 
+            this.productEditor.handleEdit(productName))
+        row.querySelector('.delete-btn').addEventListener('click', () => 
+            this.productEditor.handleDelete(productName))
+    }
+    /**
+     * Purpose: to update the total price.
+     */
+    updateTotalPrice() {
+        const totalPrice = this.productManagement.calculateTotalPrice()
+        document.querySelector('#totalPrice').textContent = `${totalPrice} kr`
+    }
 }
