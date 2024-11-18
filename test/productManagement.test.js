@@ -1,4 +1,4 @@
-import { ProductManagement } from '../src/module/ProductManagement.js'
+import { ProductManagement } from '../src/utils/productManagement'
 describe('ProductManagement', () => {
   let productManagement
 

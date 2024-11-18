@@ -1,5 +1,5 @@
-import { Product } from '../src/module/product.js'
-import { ProductUpdater } from '../src/module/productUpdater.js'
+import { Product } from '../src/models/product.js'
+import { ProductUpdater } from '../src/models/productUpdater.js'
 
 describe('ProductUpdater', () => {
   let product, updater

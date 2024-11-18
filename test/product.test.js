@@ -1,4 +1,4 @@
-import { Product } from '../src/module/product.js'
+import { Product } from '../src/models/product.js'
 
 describe('Product', () => {
   let product

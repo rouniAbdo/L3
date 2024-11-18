@@ -1,6 +1,6 @@
-import { Product } from './product.js'
-import { PriceCalculator } from './priceCalculator.js'
-import { ProductUpdater } from './productUpdater.js'
+import { Product } from '../models/product.js'
+import { PriceCalculator } from '../models/priceCalculator.js'
+import { ProductUpdater } from '../models/productUpdater.js'
 /**
  * Purpose: to manage the products.
  */
