@@ -25,8 +25,8 @@ describe('ProductUpdater', () => {
   })
 
   test('should update the VAT rate', () => {
-    updater.updateVatRate(0.25)
-    expect(product.getProductVatRate()).toBe(0.25)
+    updater.updateVatRate(25)
+    expect(product.getProductVatRate()).toBe(25)
   })
 
   test('should throw error for invalid name in update', () => {

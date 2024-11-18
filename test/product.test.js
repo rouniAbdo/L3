@@ -45,12 +45,12 @@ describe('Product', () => {
   })
 
   test('should set valid VAT rate', () => {
-    product.setProductVatRate(0.25)
-    expect(product.getProductVatRate()).toBe(0.25)
+    product.setProductVatRate(25)
+    expect(product.getProductVatRate()).toBe(25)
   })
 
   test('should throw error for invalid VAT rate', () => {
-    expect(() => product.setProductVatRate('0.25')).toThrow('VAT rate must be a number.')
+    expect(() => product.setProductVatRate('25')).toThrow('VAT rate must be a number.')
     expect(() => product.setProductVatRate(NaN)).toThrow('VAT rate must be a number.')
   })
 
@@ -58,14 +58,14 @@ describe('Product', () => {
     product.setProductName('Tablet')
     product.setProductPrice(5000)
     product.setProductQuantity(10)
-    product.setProductVatRate(0.12)
+    product.setProductVatRate(12)
 
     const productInfo = product.getProductInfo()
     expect(productInfo).toEqual({
       name: 'Tablet',
       price: 5000,
       quantity: 10,
-      VatRate: 0.12,
+      VatRate: 12,
     })
   })
 })
