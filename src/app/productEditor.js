@@ -20,6 +20,7 @@ export class ProductEditor {
             vatRate: newVatRate
         }
         this.productManagement.updateProduct(product, updatedProduct)
+        this.productListView.updateView()
     }
     /**
      * Purpose: to handle the deletion of a product.
