@@ -23,7 +23,7 @@ export class PriceCalculator  {
   */
   calculateTotalPrice(products){
     if ( !Array.isArray(products) || products.length === 0){
-      return ('there are no products')
+      return 0
     }
     let totalPrice = 0
     products.forEach(product => {

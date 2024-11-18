@@ -3,13 +3,24 @@ export class ProductListView {
         this.productManagement = productManagement
         this.productEditor = productEditor
         this.tbody = document.querySelector('#productList tbody')
+        this.productMessage = document.querySelector('#productMessage')
+        this.totalPrice = document.querySelector('#totalPrice')
     }
     /**
      * Purpose: to update the view.
      */
     updateView () {
         this.tbody.innerHTML = ''
-        this.productManagement.products.forEach(product => {
+
+        const products = this.productManagement.products
+        if (products.length === 0) {
+            this.productMessage.textContent = 'Det finns inga produkter.'
+            this.totalPrice.textContent = '0 kr'
+            return
+        }
+        this.productMessage.textContent = ''
+
+        products.forEach(product => {
             const tr = this.createProductRow(product)
             this.tbody.appendChild(tr)
         })
@@ -51,6 +62,10 @@ export class ProductListView {
      */
     updateTotalPrice() {
         const totalPrice = this.productManagement.calculateTotalPrice()
-        document.querySelector('#totalPrice').textContent = `${totalPrice} kr`
+        if (totalPrice === 0) {
+            this.totalPrice.textContent = '0 kr'
+            return
+        }
+        this.totalPrice.textContent = `${parseFloat(totalPrice).toFixed(2)} kr`
     }
 }
