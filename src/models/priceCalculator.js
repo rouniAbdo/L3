@@ -15,7 +15,7 @@ export class PriceCalculator  {
     const price = product.getProductPrice()
     const quantity = product.getProductQuantity()
     const vatRate = product.getProductVatRate()
-    const totalPrice = price * quantity * (1 + vatRate)
+    const totalPrice = price * quantity * (vatRate / 100 + 1)
     return totalPrice
   }
  /**
