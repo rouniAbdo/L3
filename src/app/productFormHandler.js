@@ -1,7 +1,8 @@
 
 export class ProductFormHandler {
-    constructor(productManagement) {
+    constructor(productManagement, productListView) {
         this.productManagement = productManagement
+        this.productListView = productListView
         this.initializeEventListeners()
     }
     /**
@@ -27,6 +28,8 @@ export class ProductFormHandler {
             alert('Product already exists')
             return
         }
+        this.productListView.updateView()
+        this.resetForm()
     }
     /**
      * Purpose: to reset the form after adding a product.
