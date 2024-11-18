@@ -71,6 +71,37 @@ const showAllProducts = () => {
     main()
 }
 /**
+ * Updates a product.
+ */
+const handleUpdateProduct = () => {
+    rl.question('Ange namnet på produkten som ska uppdateras: ', name => {
+        const product = productManagement.findProductByName(name)
+        if (!product) {
+            console.log('Produkten hittades inte.')
+            main()
+            return
+        }
+        rl.question('Uppdaterat namn: ', newName => {
+            rl.question('Uppdaterat pris: ', newPrice => {
+                rl.question('Uppdaterad kvantitet: ', newQuantity => {
+                    rl.question('Uppdaterad moms : ', newVatRate => {
+                        const updatedInfo = {
+                            name: newName || undefined,
+                            price: newPrice ? parseFloat(newPrice) : undefined,
+                            quantity: newQuantity ? parseInt(newQuantity) : undefined,
+                            vatRate: newVatRate ? parseFloat(newVatRate) : undefined
+                        }
+                        productManagement.updateProduct(name, updatedInfo)
+                        console.log('Produkten har uppdaterats.')
+                        main()
+                    })
+                })
+            })
+        })
+    })
+}
+
+/**
  * Main function that displays the main menu and handles user input.
  */
 const main = () => {
@@ -82,6 +113,9 @@ const main = () => {
                 break
             case '2':
                 showAllProducts()
+                break
+            case '3':
+                handleUpdateProduct()
                 break
             default:
                 console.log('Ogiltigt val. Försök igen.')
