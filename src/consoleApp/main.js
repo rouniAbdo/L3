@@ -100,7 +100,28 @@ const handleUpdateProduct = () => {
         })
     })
 }
-
+/**
+ * Removes a product.
+ */
+const handleRemoveProduct = () => {
+    rl.question('Ange namnet på produkten som ska tas bort: ', name => {
+        const result = productManagement.removeProduct(name)
+        if (result) {
+            console.log('Produkten har tagits bort.')
+        } else {
+            console.log('Produkten hittades inte.')
+        }
+        main()
+    })
+}
+/**
+ * Calculates the total price of all products.
+ */
+const handleCalculateTotalPrice = () => {
+    const totalPrice = productManagement.calculateTotalPrice()
+    console.log(`Totalpris: ${totalPrice} kr`)
+    main()
+}
 /**
  * Main function that displays the main menu and handles user input.
  */
@@ -116,6 +137,16 @@ const main = () => {
                 break
             case '3':
                 handleUpdateProduct()
+                break
+            case '4':
+                handleRemoveProduct()
+                break
+            case '5':
+                handleCalculateTotalPrice()
+                break
+            case '6':
+                console.log('Avslutar programmet...')
+                rl.close()
                 break
             default:
                 console.log('Ogiltigt val. Försök igen.')
