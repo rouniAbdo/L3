@@ -51,6 +51,26 @@ const handleAddProduct = () => {
     })
 }
 /**
+ * Displays all products.
+ */
+const showAllProducts = () => {
+    const products = productManagement.products
+    if (products.length === 0) {
+        console.log('Det finns inga produkter.')
+    } else {
+        console.log('Produkter:')
+        products.forEach(product => {
+            console.log(`
+                Namn: ${product.getProductName()},
+                Pris: ${product.getProductPrice()} kr,
+                Kvantitet: ${product.getProductQuantity()},
+                Moms: ${product.getProductVatRate()}%
+            `)
+        })
+    }
+    main()
+}
+/**
  * Main function that displays the main menu and handles user input.
  */
 const main = () => {
@@ -59,6 +79,9 @@ const main = () => {
         switch (choice) {
             case '1':
                 handleAddProduct()
+                break
+            case '2':
+                showAllProducts()
                 break
             default:
                 console.log('Ogiltigt val. Försök igen.')
