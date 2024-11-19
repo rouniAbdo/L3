@@ -10,31 +10,39 @@ A web-based product management system that enables users to create, read, update
 * Form validation with error messages
 * Responsive user interface
 * Confirmation and error notifications
+  
 ## Components
-**ProductApp** 
+
+* **ProductApp** 
+
 The main component that initializes and coordinates all other components. Serves as the starting point of the application.
 
-**ProductEditor**
+* **ProductEditor**
+
 Handles editing and deletion of products through modal dialogs. Features include:
 
 Editing product details via a modal form
 Deleting products with confirmation
 Form validation for edited products
-**ProductFormHandler**
+
+* **ProductFormHandler**
+
 Manages the addition of new products with functionalities such as:
 
 Form validation
 Confirmation and error notifications
 Automatic form reset after submission
-**ProductListView**
-Displays the product list and manages UI updates:
 
+* **ProductListView**
+
+Displays the product list and manages UI updates:
 Table view of products
 Real-time total price calculations
 Empty list handling
 Action buttons for each product
 
 ## Future Improvements
+
 * Personalized user accounts with login functionality
 * Persistent storage (localStorage or backend integration)
 * Sorting and filtering options
