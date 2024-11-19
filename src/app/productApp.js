@@ -10,7 +10,7 @@ export class ProductApp {
     }
 
     initializeApp() {
-        const productEditor = new ProductEditor(this.productManagement, null)
+        const productEditor = new ProductEditor(this.productManagement)
         const productListView = new ProductListView(this.productManagement, productEditor)
 
         // update the productEditor with the productListView

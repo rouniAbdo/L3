@@ -11,15 +11,12 @@ export class ProductEditor {
       this.editProductQuantity = document.querySelector('#editProductQuantity')
       this.editProductVat = document.querySelector('#editProductVat')
       this.closeEditButton = this.editModal.querySelector('.close')
-      this.productToEdit = null
   
       // Elements for delete modal
       this.deleteModal = document.querySelector('#deleteModal')
       this.confirmDeleteButton = document.querySelector('#confirmDelete')
       this.cancelDeleteButton = document.querySelector('#cancelDelete')
       this.closeDeleteButton = this.deleteModal.querySelector('.close')
-      this.productToDelete = null
-  
       // Initialize modal event listeners
       this.initializeEventListeners()
     }
