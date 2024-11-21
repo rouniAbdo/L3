@@ -5,8 +5,7 @@ import { ProductFormHandler } from './ProductFormHandler.js'
 
 export class ProductApp {
     constructor() {
-        this.productManagement = new ProductManagement();
-        this.initializeApp();
+        this.productManagement = new ProductManagement()
     }
 
     initializeApp() {

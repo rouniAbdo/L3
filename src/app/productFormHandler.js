@@ -7,7 +7,7 @@ export class ProductFormHandler {
         this.initializeEventListeners()
     }
     /**
-     * Purpose: to initialize event listeners.
+     * To initialize event listeners.
      */
     initializeEventListeners() {
         document.querySelector('#addProductForm').addEventListener('submit',(event) => {
@@ -16,7 +16,7 @@ export class ProductFormHandler {
         })
     }
     /**
-     * Purpose: to handle the addition of a product.
+     * To handle the addition of a product.
      */
     handleAddProduct() {
         const name = document.querySelector('#productName').value
@@ -34,7 +34,7 @@ export class ProductFormHandler {
         this.displayMessage('Produkten har lagts till!', 'success')
     }
     /**
-     * Purpose: to reset the form after adding a product.
+     * To reset the form after adding a product.
      */
     resetForm() {
         document.querySelector('#addProductForm').reset()

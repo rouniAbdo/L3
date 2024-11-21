@@ -7,7 +7,7 @@ describe('ProductManagement', () => {
   })
 
   test('should add a new product', () => {
-    const result = productManagement.addProduct('Laptop', 1000, 2, 25)
+    productManagement.addProduct('Laptop', 1000, 2, 25)
     expect(productManagement.products.length).toBe(1)
     expect(productManagement.products[0].getProductName()).toBe('Laptop')
     expect(productManagement.products[0].getProductPrice()).toBe(1000)
@@ -35,7 +35,7 @@ describe('ProductManagement', () => {
   })
 
   test('should update product details', () => {
-    productManagement.addProduct('Laptop', 1000, 2, 25);
+    productManagement.addProduct('Laptop', 1000, 2, 25)
     const updatedInfo = {
       price: 1200,
       quantity: 3

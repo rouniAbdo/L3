@@ -1,29 +1,49 @@
-export class ProductUpdater  {
-  constructor(Product){
+/**
+ * To update the product details.
+ */
+export class ProductUpdater {
+  /**
+   * To initialize the product updater.
+   *
+   * @param {object} Product - The product to be updated.
+   */
+  constructor (Product) {
     this.Product = Product
   }
+
   /**
-   * Purpose: to update the name of the product.
+   * To update the name of the product.
+   *
+   * @param {string} name - The new name of the product.
    */
-  updateName(name){
+  updateName (name) {
     this.Product.setProductName(name)
   }
+
   /**
-   * Purpose: to update the price of the product.
+   * To update the price of the product.
+   *
+   * @param {number} price - The new price of the product.
    */
-  updatePrice(price){
+  updatePrice (price) {
     this.Product.setProductPrice(price)
   }
+
   /**
-   * Purpose: to update the quantity of the product.
+   * To update the quantity of the product.
+   *
+   * @param {number} quantity - The new quantity of the product.
    */
-  updateQuantity(quantity){
+  updateQuantity (quantity) {
     this.Product.setProductQuantity(quantity)
   }
+
   /**
-   * Purpose: to update the VAT rate of the product.
+   * To update the VAT rate of the product.
+   *
+   * @param {number} vatRate - The new VAT rate of the product.
    */
-  updateVatRate(vatRate){
+  updateVatRate (vatRate) {
     this.Product.setProductVatRate(vatRate)
   }
 }

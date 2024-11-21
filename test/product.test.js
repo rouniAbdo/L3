@@ -65,7 +65,7 @@ describe('Product', () => {
       name: 'Tablet',
       price: 5000,
       quantity: 10,
-      VatRate: 12,
+      VatRate: 12
     })
   })
 })

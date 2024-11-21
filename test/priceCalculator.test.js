@@ -8,7 +8,7 @@ describe('PriceCalculator', () => {
     priceCalculator = new PriceCalculator()
     product1 = new Product()
     product2 = new Product()
-    
+
     // Initial setup for product1
     product1.setProductName('Laptop')
     product1.setProductPrice(1000)

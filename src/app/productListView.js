@@ -7,7 +7,7 @@ export class ProductListView {
         this.totalPrice = document.querySelector('#totalPrice')
     }
     /**
-     * Purpose: to update the view.
+     * To update the view.
      */
     updateView () {
         this.tbody.innerHTML = ''
@@ -27,7 +27,7 @@ export class ProductListView {
         this.updateTotalPrice()
     }
     /**
-     * Purpose: to create a row for a product.
+     * To create a row for a product.
      *
      * @param {Product} product - the product for which the row will be created.
      */
@@ -47,7 +47,7 @@ export class ProductListView {
         return tr
     }
     /**
-     * Purpose: to add event listeners to the row.
+     * To add event listeners to the row.
      *
      * @param {HTMLElement} row - the row to which the event listeners will be added.
      */
@@ -58,7 +58,7 @@ export class ProductListView {
             this.productEditor.handleDelete(productName))
     }
     /**
-     * Purpose: to update the total price.
+     * To update the total price.
      */
     updateTotalPrice() {
         const totalPrice = this.productManagement.calculateTotalPrice()
