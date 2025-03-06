@@ -1,8 +1,8 @@
-import { ProductManagement } from '../utils/productManagement.js'
-import { ProductEditor } from './productEditor.js'
-import { ProductListView } from './productListView.js'
-import { ProductFormHandler } from './ProductFormHandler.js'
+import { ProductEditor } from '../frontend/productEditor.js'
+import { ProductFormHandler } from '../frontend/productFormHandler.js'
+import { ProductListView } from '../frontend/productListView.js'
 import { LocalStorageHandler } from './localStorageHandler.js'
+import { ProductManagement } from '../utils/productManagement.js'
 
 export class ProductApp {
   constructor() {

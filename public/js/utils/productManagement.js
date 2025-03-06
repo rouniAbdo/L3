@@ -1,5 +1,5 @@
-import { Product } from '../models/product.js'
 import { PriceCalculator } from '../models/priceCalculator.js'
+import { Product } from '../models/product.js'
 import { ProductUpdater } from '../models/productUpdater.js'
 /**
  * To manage the products.

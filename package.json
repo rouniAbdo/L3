@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A library for calculating VAT.",
-  "main": "src/server.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/server.js",
+    "start": "live-server public",
     "console": "node src/consoleApp/main.js",
-    "dev": "nodemon src/server.js",
-    "lint": "npx eslint ./src || exit 0",
-    "lint:fix": "npx eslint ./src --fix || exit 0"
+    "lint": "npx eslint ./public/js || exit 0",
+    "lint:fix": "npx eslint ./public/js --fix || exit 0"
   },
   "author": "Rouni Abdo",
   "license": "MIT",
@@ -19,10 +17,6 @@
     "@babel/preset-env": "^7.25.4",
     "babel-jest": "^29.7.0",
     "eslint": "^8.47.0",
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.7"
-  },
-  "dependencies": {
-    "express": "^4.21.1"
+    "jest": "^29.7.0"
   }
 }

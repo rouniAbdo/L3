@@ -1,5 +1,5 @@
-import { Product } from '../src/models/product.js'
-import { PriceCalculator } from '../src/models/priceCalculator.js'
+import { Product } from '../public/js/models/product.js'
+import { PriceCalculator } from '../public/js/models/priceCalculator.js'
 
 describe('PriceCalculator', () => {
   let priceCalculator, product1, product2
